@@ -72,7 +72,7 @@ public class CandidateModel {
 		this.preferredJobLocation = candidateDTO.getPreferredJobLocation();
 		this.status = candidateDTO.getStatus();
 		this.passedOutYear = candidateDTO.getPassedOutYear();
-		this.creatorUser = candidateDTO.getCreatorUser();
+//		this.creatorUser = candidateDTO.getCreatorUser();
 		this.candidateStatus = candidateDTO.getCandidateStatus();
 		this.creationTimeStamp = candidateDTO.getCreationTimeStamp();
 		this.updatedTimeStamp = candidateDTO.getUpdatedTimeStamp();

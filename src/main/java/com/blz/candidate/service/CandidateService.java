@@ -39,7 +39,7 @@ public class CandidateService implements ICandidateService {
 		//		Optional<AdminModel> isTokenPresent = adminRepository.findById(admId);
 		//		if(isTokenPresent.isPresent()) {
 		//			Optional<TechStackModel> isTechIdPresent = techStackRepository.findById(id);
-		boolean isUserPresent = restTemplate.getForObject("http://localhost:8094/candidate/validateuser/" + token, Boolean.class);
+		boolean isUserPresent = restTemplate.getForObject("http://LMS-Admin:8067/admin/validateuser/" + token, Boolean.class);
 		if (isUserPresent) {
 			CandidateModel model = new CandidateModel(candidateDTO);
 			//			if(isTechIdPresent.isPresent()) {
@@ -59,7 +59,7 @@ public class CandidateService implements ICandidateService {
 		//		Long admId = tokenUtil.decodeToken(token);
 		//		Optional<AdminModel> isTokenPresent = adminRepository.findById(admId);
 		//		if(isTokenPresent.isPresent()) {
-		boolean isUserPresent = restTemplate.getForObject("http://localhost:8094/candidate/validateuser/" + token, Boolean.class);
+		boolean isUserPresent = restTemplate.getForObject("http://LMS-Admin:8067/admin/validateuser/" + token, Boolean.class);
 		if (isUserPresent) {
 			Optional<CandidateModel> isCandidatePresent = candidateRepository.findById(id);
 			if(isCandidatePresent.isPresent()) {
@@ -94,7 +94,7 @@ public class CandidateService implements ICandidateService {
 		//		Long admId = tokenUtil.decodeToken(token);
 		//		Optional<AdminModel> isTokenPresent = adminRepository.findById(admId);
 		//		if(isTokenPresent.isPresent()) {
-		boolean isUserPresent = restTemplate.getForObject("http://localhost:8094/candidate/validateuser/" + token, Boolean.class);
+		boolean isUserPresent = restTemplate.getForObject("http://LMS-Admin:8067/admin/validateuser/" + token, Boolean.class);
 		if (isUserPresent) {
 			List<CandidateModel> getAllCandidates = candidateRepository.findAll();
 			if(getAllCandidates.size()>0) {
@@ -109,7 +109,7 @@ public class CandidateService implements ICandidateService {
 	@Override
 	public CandidateModel deleteCandidate(Long id,String token) {
 		//		Long admId = tokenUtil.decodeToken(token);
-		boolean isUserPresent = restTemplate.getForObject("http://localhost:8094/candidate/validateuser/" + token, Boolean.class);
+		boolean isUserPresent = restTemplate.getForObject("http://LMS-Admin:8067/admin/validateuser/" + token, Boolean.class);
 		if (isUserPresent) {
 			Optional<CandidateModel> isCandidatePresent = candidateRepository.findById(id);
 			if(isCandidatePresent.isPresent()) {
@@ -130,7 +130,7 @@ public class CandidateService implements ICandidateService {
 		//		Long admId = tokenUtil.decodeToken(token);
 		//		Optional<AdminModel> isTokenPresent = adminRepository.findById(admId);
 		//		if(isTokenPresent.isPresent()) {
-		boolean isUserPresent = restTemplate.getForObject("http://localhost:8094/candidate/validateuser/" + token, Boolean.class);
+		boolean isUserPresent = restTemplate.getForObject("http://LMS-Admin:8067/admin/validateuser/" + token, Boolean.class);
 		if (isUserPresent) {
 			List<CandidateModel> isStatusPresent = candidateRepository.getCandidateByStatus(status);
 			if(isStatusPresent.size() > 0) {
@@ -146,7 +146,7 @@ public class CandidateService implements ICandidateService {
 		//		Long admId = tokenUtil.decodeToken(token);
 		//		Optional<AdminModel> isTokenPresent = adminRepository.findById(admId);
 		//		if(isTokenPresent.isPresent()) {
-		boolean isUserPresent = restTemplate.getForObject("http://localhost:8094/candidate/validateuser/" + token, Boolean.class);
+		boolean isUserPresent = restTemplate.getForObject("http://LMS-Admin:8067/admin/validateuser/" + token, Boolean.class);
 		if (isUserPresent) {
 			Optional<CandidateModel> isPresent = candidateRepository.findById(id);
 			if (isPresent.isPresent()) {
@@ -165,7 +165,7 @@ public class CandidateService implements ICandidateService {
 	@Override
 	public long statusCount(String status,String token) {
 		//		Long admId = tokenUtil.decodeToken(token);
-		boolean isUserPresent = restTemplate.getForObject("http://localhost:8094/candidate/validateuser/" + token, Boolean.class);
+		boolean isUserPresent = restTemplate.getForObject("http://LMS-Admin:8067/admin/validateuser/" + token, Boolean.class);
 		if (isUserPresent) {
 			List<CandidateModel> isStatusPresent = candidateRepository.getCandidateByStatus(status);
 			if(isStatusPresent.size()>0) {

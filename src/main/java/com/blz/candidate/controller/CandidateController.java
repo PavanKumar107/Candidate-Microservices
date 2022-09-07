@@ -30,9 +30,6 @@ import com.blz.candidate.model.CandidateModel;
 import com.blz.candidate.service.ICandidateService;
 import com.blz.candidate.util.Response;
 
-
-
-
 /**
  * Purpose: candidate controller to process candidate Data APIs.
  * @version: 4.15.1.RELEASE
@@ -67,7 +64,7 @@ public class CandidateController {
 	 * @Param: candidateDTO,token and id
 	 */
 	@PostMapping("/addcandidate")
-	public ResponseEntity<Response> addCandidate(@Valid@RequestBody CandidateDTO candidateDTO, @RequestHeader String token) {
+	public ResponseEntity<Response> addCandidate(/*@Valid*/@RequestBody CandidateDTO candidateDTO, @RequestHeader String token) {
 		CandidateModel candidateModel = candidateService.addCandidate(candidateDTO,token);
 		Response response = new Response("candidate inserted successfully", 200, candidateModel);
 		return new ResponseEntity<>(response, HttpStatus.OK);	
@@ -78,7 +75,7 @@ public class CandidateController {
 	 * @Param: candidateDTO,token and id
 	 */
 	@PutMapping("/updatecandidate/{id}")
-	public ResponseEntity<Response> updateCandidate(@Valid@RequestBody CandidateDTO candidateDTO,@PathVariable Long id, @RequestHeader String token) {
+	public ResponseEntity<Response> updateCandidate(/*@Valid*/@RequestBody CandidateDTO candidateDTO,@PathVariable Long id, @RequestHeader String token) {
 		CandidateModel candidateModel = candidateService.updateCandidate(candidateDTO,id,token);
 		Response response = new Response("candidate updated successfully", 200, candidateModel);
 		return new ResponseEntity<>(response, HttpStatus.OK);
